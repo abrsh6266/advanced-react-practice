@@ -1,9 +1,10 @@
-import UseStateArray from "./tutorial/01-useState/starter/03-useState-array";
+import CodeExample from "./tutorial/02-useEffect/starter/01-code-example";
+
 
 function App() {
   return (
     <div className='container'>
-      <UseStateArray />
+      <CodeExample />
     </div>
   );
 }
