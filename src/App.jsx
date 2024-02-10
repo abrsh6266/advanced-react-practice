@@ -1,10 +1,9 @@
-import CodeExample from "./tutorial/02-useEffect/starter/01-code-example";
-
+import MultipleReturnsFetchData from "./tutorial/03-conditional-rendering/starter/02-multiple-returns-fetch-data";
 
 function App() {
   return (
     <div className='container'>
-      <CodeExample />
+      <MultipleReturnsFetchData />
     </div>
   );
 }
