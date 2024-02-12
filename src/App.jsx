@@ -1,9 +1,9 @@
-import MultipleReturnsFetchData from "./tutorial/03-conditional-rendering/starter/02-multiple-returns-fetch-data";
+import ControlledInputs from "./tutorial/06-forms/starter/01-controlled-inputs";
 
 function App() {
   return (
     <div className='container'>
-      <MultipleReturnsFetchData />
+      <ControlledInputs />
     </div>
   );
 }
