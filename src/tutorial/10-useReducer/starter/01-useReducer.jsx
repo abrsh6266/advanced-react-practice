@@ -1,30 +1,59 @@
-import React from 'react';
-import { data } from '../../../data';
-const ReducerBasics = () => {
-  const [people, setPeople] = React.useState(data);
+import React from "react";
+import { data, people } from "../../../data";
+import { useState } from "react";
+import { useReducer } from "react";
 
-  const removeItem = (id) => {
-    let newPeople = people.filter((person) => person.id !== id);
-    setPeople(newPeople);
+const defaultState = {
+  people: people,
+  isLoading: false,
+};
+const reducer = (state, action) => {
+  console.log(action)
+  if (action.type === "CLEAR_LIST"){
+    return {...state,people:[]}
+  }
+};
+const ReducerBasics = () => {
+  const [state, dispatch] = useReducer(reducer, defaultState);
+
+  const removeItem = (id) => {};
+  const clearList = () => {
+    dispatch({ type: "CLEAR_LIST" });
   };
+  const resetList = () => {};
+
+  console.log(state);
   return (
     <div>
-      {people.map((person) => {
+      {state.people.map((person) => {
         const { id, name } = person;
         return (
-          <div key={id} className='item'>
+          <div key={id} className="item">
             <h4>{name}</h4>
             <button onClick={() => removeItem(id)}>remove</button>
           </div>
         );
       })}
-      <button
-        className='btn'
-        style={{ marginTop: '2rem' }}
-        onClick={() => setPeople([])}
-      >
-        clear items
-      </button>
+      {state.people.length ? (
+        <button
+          className="btn"
+          style={{ marginTop: "2rem" }}
+          onClick={() => {
+            clearList();
+          }}
+        >
+          clear items
+        </button>
+      ) : (
+        <button
+          className="btn"
+          style={{ marginTop: "2rem" }}
+          onClick={() => {
+          }}
+        >
+          Reset
+        </button>
+      )}
     </div>
   );
 };
