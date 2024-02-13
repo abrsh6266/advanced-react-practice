@@ -6,7 +6,6 @@ const UseRefBasics = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
   };
-
   return (
     <div>
       <form className='form' onSubmit={handleSubmit}>

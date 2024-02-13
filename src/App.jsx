@@ -1,9 +1,9 @@
-import OtherInputs from "./tutorial/06-forms/starter/04-other-inputs";
+import FetchData from "./tutorial/08-custom-hooks/starter/02-fetch-data";
 
 function App() {
   return (
     <div className='container'>
-      <OtherInputs />
+      <FetchData />
     </div>
   );
 }
